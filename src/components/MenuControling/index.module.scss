@@ -1,0 +1,15 @@
+.controlList {
+    display: flex;
+
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.controlItem{
+    cursor: pointer;
+    
+}
+
+.controlItem:not(:last-child){
+    margin-right: 10px;
+}

@@ -1,15 +1,22 @@
 .container {
-    width: 350px;
-    margin: 50px auto;
-   
-    padding: 10px 15px;
-    border: 1px solid black;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 7px 7px grey,  ;
+  width: 450px;
+  height: 50px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: white;
+  border-radius: 4px;
+  margin: 0;
 }
 
-.elForm{
-    margin-bottom: 15px;
+.elForm {
+  width: 80%;
+  height: 100%;
+  margin-left: 15px;
+  border: 0;
+}
+
+.elForm:focus {
+  outline: none;
 }

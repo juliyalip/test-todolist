@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 import TodoForm from "../../components/TodoForm";
-import TodoList from "../../components/LodoList";
-import Filter from '../../components/Filter'
+import TodoList from "../../components/TodoList";
 import { ITodo } from "../../interfaces/todo";
-import s from './index.module.scss'
+import Hero from "../../components/Hero";
+import ContainerForPosition from "../../components/itoms/ContainerForPosition";
+import ControllingSection from "../../components/ControllingSection";
+
 
 export default function TodosPage() {
-  const [todos, setTodos] = useState<ITodo[]>([]);
-  const [filterValue, setFilterValue] = useState('')
+  const [todos, setTodos] = useState<ITodo[]>([
+    {
+      id: "001",
+      text: "I love React",
+      done: false,
+    },
+  ]);
+  
 
-const handleAdd =(todo: ITodo)=>{
-    setTodos(prevState => [...prevState, todo])
-}
+  const handleAdd = (todo: ITodo) => {
+    setTodos((prevState) => [...prevState, todo]);
+  };
   const handleDelete = (id: string) => {
     setTodos((prevState) => prevState.filter((item) => item.id !== id));
   };
@@ -21,7 +29,7 @@ const handleAdd =(todo: ITodo)=>{
         if (item.id === id) {
           return {
             ...item,
-            done: !item.done
+            done: !item.done,
           };
         }
         return item;
@@ -29,26 +37,23 @@ const handleAdd =(todo: ITodo)=>{
     );
   };
 
-  const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) =>{
-    setFilterValue(e.target.value)
-  }
 
-
-  const filteredTodos: ITodo[] = todos.filter(todo => todo.text.toLowerCase().includes(filterValue.toLowerCase()))
 
   return (
-    < >
+    <>
+      <Hero />
+
       <TodoForm addTodo={handleAdd} />
-      <div className={s.container}>
-       <Filter value={filterValue} onFilter={handleFilter} />
-      {todos && (
-        <TodoList
-          items={filteredTodos}
-          onDelete={handleDelete}
-          onComplited={handleComplited}
-        />
-      )}
-      </div>
+    <ContainerForPosition>
+        {todos && (
+          <TodoList
+            items={todos}
+            onDelete={handleDelete}
+            onComplited={handleComplited}
+          />
+        )}
+        {todos.length > 0 && <ControllingSection result="all todos"/>}
+        </ContainerForPosition>
     </>
   );
 }

@@ -1,0 +1,12 @@
+.coveredImg {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: blue;
+  background-image: linear-gradient(
+      to right,
+      rgba(248, 13, 221, 0.5),
+      rgba(40, 73, 237, 0.5)
+    ),
+    url('https://cs6.pikabu.ru/post_img/big/2014/09/01/5/1409549973_893091138.jpg');
+}
