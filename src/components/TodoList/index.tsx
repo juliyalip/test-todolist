@@ -9,7 +9,8 @@ interface IProp {
 }
 
 export default function TodoList({ items, onDelete, onComplited }: IProp) {
-  return (
+  return (<>
+   
     <ul className={s.containerList}>
       {items.map(item => (
         <Item
@@ -20,5 +21,6 @@ export default function TodoList({ items, onDelete, onComplited }: IProp) {
         />
       ))}
     </ul>
+    </>
   );
 }

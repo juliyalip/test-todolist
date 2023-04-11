@@ -1,31 +1,29 @@
-import React, { useState } from "react";
-import TodoForm from "../../components/TodoForm";
-import TodoList from "../../components/TodoList";
-import { ITodo } from "../../interfaces/todo";
-import Hero from "../../components/Hero";
-import ContainerForPosition from "../../components/itoms/ContainerForPosition";
-import ControllingSection from "../../components/ControllingSection";
-
+import React, { useState } from 'react';
+import TodoForm from '../../components/TodoForm';
+import TodoList from '../../components/TodoList';
+import { ITodo } from '../../interfaces/todo';
+import Hero from '../../components/Hero';
+import ContainerForPosition from '../../components/itoms/ContainerForPosition';
+import ControllingSection from '../../components/ControllingSection';
 
 export default function TodosPage() {
   const [todos, setTodos] = useState<ITodo[]>([
     {
-      id: "001",
-      text: "I love React",
+      id: '001',
+      text: 'I love React',
       done: false,
     },
   ]);
-  
 
   const handleAdd = (todo: ITodo) => {
-    setTodos((prevState) => [...prevState, todo]);
+    setTodos(prevState => [...prevState, todo]);
   };
   const handleDelete = (id: string) => {
-    setTodos((prevState) => prevState.filter((item) => item.id !== id));
+    setTodos(prevState => prevState.filter(item => item.id !== id));
   };
   const handleComplited = (id: string) => {
-    setTodos((prevState) =>
-      prevState.map((item) => {
+    setTodos(prevState =>
+      prevState.map(item => {
         if (item.id === id) {
           return {
             ...item,
@@ -33,18 +31,24 @@ export default function TodosPage() {
           };
         }
         return item;
-      })
+      }),
     );
   };
 
-
+  const deleteDoneTodos = () => {
+    setTodos(prevState =>
+      prevState.filter(todo => {
+        return todo.done === false;
+      }),
+    );
+  };
 
   return (
     <>
       <Hero />
 
       <TodoForm addTodo={handleAdd} />
-    <ContainerForPosition>
+      <ContainerForPosition>
         {todos && (
           <TodoList
             items={todos}
@@ -52,8 +56,13 @@ export default function TodosPage() {
             onComplited={handleComplited}
           />
         )}
-        {todos.length > 0 && <ControllingSection result="all todos"/>}
-        </ContainerForPosition>
+        {todos.length > 0 && (
+          <ControllingSection
+            result="all todos"
+            onDeleteTodos={deleteDoneTodos}
+          />
+        )}
+      </ContainerForPosition>
     </>
   );
 }

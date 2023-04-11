@@ -23,13 +23,17 @@ export default function TodoForm({ addTodo }: IProp) {
     setText('');
   };
   return (
-    <form onSubmit={handleSubmit} className={s.container}>
-      <input
-        type="text"
-        value={text}
-        onChange={changeText}
-        className={s.elForm}
-      />
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className={s.container}>
+        {text && <span className={s.labelForActiveForm}></span>}
+
+        <input
+          type="text"
+          value={text}
+          onChange={changeText}
+          className={s.elForm}
+        />
+      </form>
+    </>
   );
 }

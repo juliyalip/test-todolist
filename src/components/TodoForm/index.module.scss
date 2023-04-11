@@ -8,7 +8,10 @@
   background-color: white;
   border-radius: 4px;
   margin: 0;
-}
+  padding-left: 10px;
+  border: 1px solid gray;
+  align-items: center;
+  }
 
 .elForm {
   width: 80%;
@@ -19,4 +22,14 @@
 
 .elForm:focus {
   outline: none;
+}
+
+.labelForActiveForm{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 0.5px solid gray;
+ vertical-align: middle;
 }
