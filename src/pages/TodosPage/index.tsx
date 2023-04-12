@@ -15,25 +15,8 @@ export default function TodosPage() {
     },
   ]);
 
-  const handleAdd = (todo: ITodo) => {
-    setTodos(prevState => [...prevState, todo]);
-  };
-  const handleDelete = (id: string) => {
-    setTodos(prevState => prevState.filter(item => item.id !== id));
-  };
-  const handleComplited = (id: string) => {
-    setTodos(prevState =>
-      prevState.map(item => {
-        if (item.id === id) {
-          return {
-            ...item,
-            done: !item.done,
-          };
-        }
-        return item;
-      }),
-    );
-  };
+ 
+
 
   const deleteDoneTodos = () => {
     setTodos(prevState =>
@@ -47,13 +30,13 @@ export default function TodosPage() {
     <>
       <Hero />
 
-      <TodoForm addTodo={handleAdd} />
+      <TodoForm  />
       <ContainerForPosition>
         {todos && (
           <TodoList
-            items={todos}
-            onDelete={handleDelete}
-            onComplited={handleComplited}
+          
+         
+          
           />
         )}
         {todos.length > 0 && (

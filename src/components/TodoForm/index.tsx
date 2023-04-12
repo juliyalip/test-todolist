@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
+import { useAppDispatch } from '../../redux/hooks';
 import shortid from 'shortid';
-import { ITodo } from '../../interfaces/todo';
+import { addTodo } from '../../redux/todos-slice';
 import s from './index.module.scss';
 
-interface IProp {
-  addTodo: (todo: ITodo) => void;
-}
 
-export default function TodoForm({ addTodo }: IProp) {
+export default function TodoForm() {
+  const dispatch = useAppDispatch();
   const [text, setText] = useState<string>('');
   const changeText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -19,7 +18,7 @@ export default function TodoForm({ addTodo }: IProp) {
       alert('The field is empty');
       return;
     }
-    addTodo({ text, id: shortid.generate(), done: false });
+    dispatch(addTodo({ text, id: shortid.generate(), done: false }));
     setText('');
   };
   return (

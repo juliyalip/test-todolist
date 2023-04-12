@@ -1,26 +1,31 @@
 import { ITodo } from '../../interfaces/todo';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { removeTodo , complitedTodo} from '../../redux/todos-slice';
 import Item from '../itoms/Item';
 import s from './index.module.scss';
 
-interface IProp {
-  items: ITodo[];
-  onDelete: (id: string) => void;
-  onComplited: (id: string) => void;
-}
 
-export default function TodoList({ items, onDelete, onComplited }: IProp) {
-  return (<>
-   
-    <ul className={s.containerList}>
-      {items.map(item => (
-        <Item
-          key={item.id}
-          item={item}
-          onDelete={onDelete}
-          onComplited={onComplited}
-        />
-      ))}
-    </ul>
+export default function TodoList() {
+  const dispatch = useAppDispatch()
+  const todos = useAppSelector(state => state.todos);
+  const handleRemove = (id: string) =>{
+    dispatch(removeTodo(id))
+  }
+  const handleComplited = (id: string)=>{
+    dispatch(complitedTodo(id))
+  }
+  return (
+    <>
+      <ul className={s.containerList}>
+        {todos.map(todo => (
+          <Item
+            key={todo.id}
+            item={todo}
+            onDelete={()=> handleRemove(todo.id)}
+            onComplited={() =>handleComplited(todo.id)}
+          />
+        ))}
+      </ul>
     </>
   );
 }
