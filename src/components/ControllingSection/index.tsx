@@ -1,17 +1,19 @@
 import MenuControlling from '../MenuControling';
+import { useAppDispatch } from '../../redux/hooks';
+import { removeAllComplited } from '../../redux/todos-slice';
 import s from './index.module.scss';
 
-interface IProp {
-  result: string;
-  onDeleteTodos: () => void
-}
-
-export default function ControllingSection({ result, onDeleteTodos }: IProp) {
+export default function ControllingSection() {
+  const dispatch = useAppDispatch();
+  const handleRemoveAllComplited = () => {
+    dispatch(removeAllComplited());
+  };
   return (
     <div className={s.container}>
-      <span>{result}</span>
       <MenuControlling items={['All', 'Active', 'Completed']} />
-      <p className={s.clear} onClick={onDeleteTodos}>Clear complited</p>
+      <p className={s.clear} onClick={handleRemoveAllComplited}>
+        Clear complited
+      </p>
     </div>
   );
 }

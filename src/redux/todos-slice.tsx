@@ -33,9 +33,12 @@ const todosSlice = createSlice({
                     done: !todo.done}
                 } return todo
             })
+        },
+        removeAllComplited: (state) => {
+          return state.filter(todo => todo.done === false)
         }
     }
 })
 
-export const {addTodo, removeTodo, complitedTodo} = todosSlice.actions
+export const {addTodo, removeTodo, complitedTodo, removeAllComplited} = todosSlice.actions
 export default todosSlice.reducer
