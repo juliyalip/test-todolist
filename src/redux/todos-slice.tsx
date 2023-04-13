@@ -3,16 +3,9 @@ import { ITodo } from "../interfaces/todo";
 
 
 const initialState: ITodo[]= [
-    {
-        id: '001',
-        text: 'I love React',
-        done: false,
-      },
-      {
-        id: '002',
-        text: 'I love Redux.js',
-        done: false,
-      },
+    {id: '001', text: "I love React.js", done: false},
+    {id: '002', text: "I love React.js", done: false}
+   
 ]
 
 

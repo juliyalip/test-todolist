@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../redux/hooks';
 import shortid from 'shortid';
 import { addTodo } from '../../redux/todos-slice';
+
 import s from './index.module.scss';
+
+
 
 
 export default function TodoForm() {
@@ -12,6 +15,9 @@ export default function TodoForm() {
     setText(e.target.value);
   };
 
+
+  
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!text) {
@@ -19,8 +25,11 @@ export default function TodoForm() {
       return;
     }
     dispatch(addTodo({ text, id: shortid.generate(), done: false }));
+   
     setText('');
   };
+
+
   return (
     <>
       <form onSubmit={handleSubmit} className={s.container}>
