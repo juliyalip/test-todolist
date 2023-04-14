@@ -6,7 +6,7 @@
   background-color: white;
 }
 
-.itemText {
+.itemDiv {
   cursor: pointer;
   margin-left: 15px;
   display: flex;
@@ -14,4 +14,9 @@
   width: 100%;
   padding-right: 10px;
   justify-content: space-between;
+}
+
+.itemTextActive {
+  color: grey;
+  text-decoration: line-through;
 }
