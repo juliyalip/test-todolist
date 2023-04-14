@@ -1,7 +1,7 @@
 import MenuControlling from '../MenuControling';
 import { useAppDispatch } from '../../redux/hooks';
 import { removeAllComplited } from '../../redux/todos-slice';
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
 const  ControllingSection = () =>{
   const dispatch = useAppDispatch();
@@ -9,9 +9,9 @@ const  ControllingSection = () =>{
     dispatch(removeAllComplited());
   };
   return (
-    <div className={styles.container}>
+    <div className={style.container}>
       <MenuControlling items={['All', 'Active', 'Completed']} />
-      <p className={styles.clear} onClick={handleRemoveAllComplited}>
+      <p className={style.clear} onClick={handleRemoveAllComplited}>
         Clear complited
       </p>
     </div>

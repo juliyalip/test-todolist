@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../redux/hooks';
 import shortid from 'shortid';
 import { addTodo } from '../../redux/todos-slice';
-import styles from './index.module.scss';
+
+import style from './index.module.scss';
 
 const TodoForm = () => {
   const dispatch = useAppDispatch();
@@ -23,14 +24,14 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.container}>
-      {text && <span className={styles.labelForActiveForm}></span>}
+    <form onSubmit={handleSubmit} className={style.container}>
+      {text && <span className={style.labelForActiveForm}></span>}
 
       <input
         type="text"
         value={text}
         onChange={changeText}
-        className={styles.elForm}
+        className={style.inputElement}
       />
     </form>
   );

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../redux/hooks';
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
 interface IProp {
   items: string[];
@@ -39,14 +39,14 @@ const  MenuControlling = ({ items }: IProp) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={style.container}>
       <span>{result} items</span>
-      <ul className={styles.controlList}>
+      <ul className={style.controlList}>
         {items.map((item, index) => (
           <li
             key={item}
             onClick={() => onClickMenu(index)}
-            className={styles.controlItem}
+            className={style.controlItem}
             style={{ color: index === activeIndex ? 'blue' : 'black' }}
           >
             {item}{' '}

@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './index.module.css';
+import style from './index.module.css';
 
 const  Hero =()=> {
-  return <div className={styles.coveredImg}></div>;
+  return <div className={style.coveredImg}></div>;
 }
 
 

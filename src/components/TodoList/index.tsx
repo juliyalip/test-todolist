@@ -1,11 +1,12 @@
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { getVisibleTodos } from '../../redux/selectors';
 import { removeTodo, complitedTodo } from '../../redux/todos-slice';
 import Item from '../itoms/Item';
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
 const TodoList = () => {
   const dispatch = useAppDispatch();
-  const todos = useAppSelector(state => state.todos);
+  const visibleTodos = useAppSelector(getVisibleTodos);
 
   const handleRemove = (id: string) => {
     dispatch(removeTodo(id));
@@ -16,8 +17,8 @@ const TodoList = () => {
   };
 
   return (
-    <ul className={styles.containerList}>
-      {todos?.map(todo => (
+    <ul className={style.containerList}>
+      {visibleTodos?.map(todo => (
         <Item
           key={todo.id}
           item={todo}

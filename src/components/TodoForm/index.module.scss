@@ -9,18 +9,20 @@
   border-radius: 4px;
   margin: 0;
   padding-left: 10px;
+  padding-right: 0;
   border: 1px solid gray;
+  display: flex;
   align-items: center;
   }
 
-.elForm {
+.inputElement {
   width: 80%;
   height: 100%;
   margin-left: 15px;
   border: 0;
 }
 
-.elForm:focus {
+.inputElement:focus {
   outline: none;
 }
 
