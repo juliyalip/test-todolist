@@ -1,10 +1,10 @@
 import React from 'react';
-import TodosPage from './pages/TodosPage';
+import Todos from './views/Todos';
 
 function App() {
   return (
     <>
-      <TodosPage />
+      <Todos />
     </>
   );
 }

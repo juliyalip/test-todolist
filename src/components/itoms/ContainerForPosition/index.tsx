@@ -1,13 +1,11 @@
-import React from "react";
-import s from './index.module.scss'
+import React from 'react';
+import styles from './index.module.scss';
 
 interface IProp {
   children: React.ReactNode;
-
 }
 
-export default function ContainerForPosition({ children }: IProp) {
- return(
-  <div className={s.container} >{children}</div>
- )
-}
+const ContainerForPosition = ({ children }: IProp) => {
+  return <div className={styles.container}>{children}</div>;
+};
+export default ContainerForPosition;

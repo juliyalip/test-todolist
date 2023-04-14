@@ -5,7 +5,7 @@ import Hero from '../../components/Hero';
 import ContainerForPosition from '../../components/itoms/ContainerForPosition';
 import ControllingSection from '../../components/ControllingSection';
 
-export default function TodosPage() {
+export default function Todos() {
   const todos = useAppSelector(state => state.todos);
 
   return (
@@ -20,5 +20,3 @@ export default function TodosPage() {
     </>
   );
 }
-
-

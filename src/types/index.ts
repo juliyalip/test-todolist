@@ -3,3 +3,8 @@ export interface ITodo{
     id: string,
     done: boolean
 }
+
+export interface INavigate{
+    path: string,
+    title: string
+    }

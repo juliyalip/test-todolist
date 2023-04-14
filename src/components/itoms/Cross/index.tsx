@@ -1,4 +1,4 @@
-export default function Cross() {
+const Cross = () => {
   return (
     <svg
       version="1.1"
@@ -11,3 +11,5 @@ export default function Cross() {
     </svg>
   );
 }
+
+export default Cross

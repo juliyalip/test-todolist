@@ -1,26 +1,22 @@
 .controlList {
-    display: flex;
-
-    margin-left: 50px;
-  
+  display: flex;
+  margin-left: 50px;
 }
 
-.controlItem{
-    cursor: pointer;    
+.controlItem {
+  cursor: pointer;
 }
 
-.controlItem:hover{
+.controlItem:hover {
   font-weight: 500;
 }
-.controlItem:not(:last-child){
-    margin-right: 10px;
+
+.controlItem:not(:last-child) {
+  margin-right: 10px;
 }
 
-.container{
-    display: flex;
-
-    margin-right: 20px;
-   
-    align-items: center;
+.container {
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
 }
-

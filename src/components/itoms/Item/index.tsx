@@ -1,20 +1,20 @@
 import Checkbox from '../Checkbox';
 import Cross from '../Cross';
-import { ITodo } from '../../../interfaces/todo';
-import s from './index.module.scss';
+import { ITodo } from '../../../types';
+import styles from './index.module.scss';
 
-interface IProp {
+interface ItemInterface {
   item: ITodo;
   onDelete: (id: string) => void;
   onComplited: (id: string) => void;
 }
 
-export default function Item({ item, onComplited, onDelete }: IProp) {
+const Item = ({ item, onComplited, onDelete }: ItemInterface) => {
   return (
-    <li className={s.itemContainer}>
+    <li className={styles.itemContainer}>
       <Checkbox done={item.done} onComplited={onComplited} id={item.id} />
 
-      <div className={s.itemText} onClick={() => onDelete(item.id)}>
+      <div className={styles.itemText} onClick={() => onDelete(item.id)}>
         <p
           style={{
             color: item.done ? 'grey' : 'black',
@@ -28,4 +28,5 @@ export default function Item({ item, onComplited, onDelete }: IProp) {
       </div>
     </li>
   );
-}
+};
+export default Item;

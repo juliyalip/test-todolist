@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import { ITodo } from "../interfaces/todo";
+import { ITodo } from "../types";
 
 
 const initialState: ITodo[]= [
