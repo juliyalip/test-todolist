@@ -1,8 +1,7 @@
 import React from 'react';
-import { PersistGate } from 'redux-persist/integration/react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import store, { persistor } from './redux/store';
+import store from './redux/store';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -13,9 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <App />
-      </PersistGate>
+      <App />
     </Provider>
   </React.StrictMode>,
 );

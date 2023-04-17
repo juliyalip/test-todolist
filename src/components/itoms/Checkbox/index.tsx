@@ -1,4 +1,3 @@
-import React from 'react';
 import Checkmark from '../Checkmark';
 import cn from 'classnames';
 import style from './index.module.scss';

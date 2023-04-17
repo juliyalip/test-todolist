@@ -1,9 +1,7 @@
-import React from 'react';
-import style from './index.module.css';
+import style from './index.module.scss';
 
-const  Hero =()=> {
+const Hero = () => {
   return <div className={style.coveredImg}></div>;
-}
+};
 
-
-export default Hero
+export default Hero;

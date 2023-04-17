@@ -1,11 +1,13 @@
+import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import { getVisibleTodos } from '../../redux/selectors';
+import { getVisibleTodos, getTodos } from '../../redux/selectors';
 import { removeTodo, complitedTodo } from '../../redux/todos-slice';
 import Item from '../itoms/Item';
 import style from './index.module.scss';
 
 const TodoList = () => {
   const dispatch = useAppDispatch();
+  const todos = useAppSelector(getTodos);
   const visibleTodos = useAppSelector(getVisibleTodos);
 
   const handleRemove = (id: string) => {
@@ -15,6 +17,10 @@ const TodoList = () => {
   const handleComplited = (id: string) => {
     dispatch(complitedTodo(id));
   };
+
+  useEffect(() => {
+    window.localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <ul className={style.containerList}>

@@ -1,9 +1,8 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAppDispatch } from '../../redux/hooks';
 import shortid from 'shortid';
 import { addTodo } from '../../redux/todos-slice';
 import Alert from '../../components/itoms/Alert';
-
 import style from './index.module.scss';
 
 const TodoForm = () => {
@@ -14,11 +13,11 @@ const TodoForm = () => {
     setText(e.target.value);
   };
 
-useEffect(()=>{
-setTimeout(()=>{
-  setVisibleAlert(false)
-}, 2000)
-}, [visibleAlert])
+  useEffect(() => {
+    setTimeout(() => {
+      setVisibleAlert(false);
+    }, 2000);
+  }, [visibleAlert]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,7 +25,8 @@ setTimeout(()=>{
       setVisibleAlert(true);
       return;
     }
-    dispatch(addTodo({ text, id: shortid.generate(), done: false }));
+    const todo = { text, id: shortid.generate(), done: false };
+    dispatch(addTodo(todo));
 
     setText('');
   };

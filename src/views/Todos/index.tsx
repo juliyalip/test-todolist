@@ -6,7 +6,6 @@ import ContainerForPosition from '../../components/itoms/ContainerForPosition';
 import ControllingSection from '../../components/ControllingSection';
 import Filter from '../../components/Filter';
 
-
 export default function Todos() {
   const todos = useAppSelector(state => state.todos);
 
@@ -16,7 +15,7 @@ export default function Todos() {
 
       <TodoForm />
       <ContainerForPosition>
-        {todos.length > 0 && <Filter  />}
+        {todos.length > 0 && <Filter />}
         {todos && <TodoList />}
         {todos.length > 0 && <ControllingSection />}
       </ContainerForPosition>

@@ -6,7 +6,7 @@ interface IProp {
   items: string[];
 }
 
-const  MenuControlling = ({ items }: IProp) => {
+const MenuControlling = ({ items }: IProp) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [result, setResult] = useState<number>(0);
 
@@ -55,6 +55,6 @@ const  MenuControlling = ({ items }: IProp) => {
       </ul>
     </div>
   );
-}
+};
 
-export default MenuControlling
+export default MenuControlling;
