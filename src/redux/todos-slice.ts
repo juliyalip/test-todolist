@@ -3,7 +3,7 @@ import { ITodo } from '../types';
 
 const local = window.localStorage.getItem('todos') ?? '';
 
-const initialState: ITodo[] = JSON.parse(local) ? JSON.parse(local) : [];
+const initialState: ITodo[] = local ? JSON.parse(local) : [];
 
 const todosSlice = createSlice({
   name: 'todos',
