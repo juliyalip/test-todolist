@@ -6,10 +6,8 @@ import TodosSlice, {
 } from './todos-slice';
 import {ITodo} from '../types'
 
-
-
 describe('tests for ListSlice', () => {
-  
+
   let initionState: ITodo[]
 
   beforeEach(() => initionState =  [{ id: '001', text: 'React', done: false }] )
@@ -20,7 +18,7 @@ describe('tests for ListSlice', () => {
     ]);
   });
 
-  it('test add todo to list', () => {
+   it('test add todo to list', () => {
     expect(
       TodosSlice(
         initionState,
