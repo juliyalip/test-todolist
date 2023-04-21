@@ -1,6 +1,6 @@
 import React from 'react';
 import Checkmark from '../Checkmark';
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
 interface IProps {
   done: boolean;
@@ -8,17 +8,17 @@ interface IProps {
   id: string;
 }
 
-const  Checkbox = ({ done, onComplited, id }: IProps) =>{
+const Checkbox = ({ done, onComplited, id }: IProps) => {
   return (
-    <label className={styles.label}>
+    <label className={style.label}>
       <input
         type="checkbox"
         checked={done}
         onChange={() => onComplited(id)}
-        className={styles.checkbox}
+        className={style.checkbox}
       />
       <span
-        className={styles.spanCheck}
+        className={style.spanCheck}
         style={{
           background: done
             ? 'linear-gradient(to right, rgba(248, 13, 221, 1), rgba(40, 73, 237, 1))'
@@ -29,6 +29,6 @@ const  Checkbox = ({ done, onComplited, id }: IProps) =>{
       </span>
     </label>
   );
-}
+};
 
-export default Checkbox
+export default Checkbox;
