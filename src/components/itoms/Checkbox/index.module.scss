@@ -10,6 +10,14 @@
   left: 0;
 }
 
+.spanCheckActive {
+  background: linear-gradient(
+    to right,
+    rgba(248, 13, 221, 1),
+    rgba(40, 73, 237, 1)
+  );
+}
+
 .spanCheck:hover {
   border: 0.5px solid blue;
 }
