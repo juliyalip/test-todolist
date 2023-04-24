@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ITodo } from '../types';
+import { ITodo } from 'types';
 
 const local = window.localStorage.getItem('todos') ?? '';
 

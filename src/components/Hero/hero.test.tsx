@@ -1,10 +1,8 @@
 import Hero from './index';
-import {render, screen} from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-describe("render baner", () =>{
-    it('render correctly', ()=>{
-        render(<Hero />);
-    
-        
-    })
-})
+describe('render baner', () => {
+  it('render correctly', () => {
+    render(<Hero />);
+  });
+});

@@ -1,5 +1,5 @@
-import React from 'react';
 import Checkmark from '../Checkmark';
+import classnames from 'classnames'
 import style from './index.module.scss';
 
 interface IProps {
@@ -18,12 +18,9 @@ const Checkbox = ({ done, onComplited, id }: IProps) => {
         className={style.checkbox}
       />
       <span
-        className={style.spanCheck}
-        style={{
-          background: done
-            ? 'linear-gradient(to right, rgba(248, 13, 221, 1), rgba(40, 73, 237, 1))'
-            : '',
-        }}
+      className={classnames(style.spanCheck, {
+        [style.spanCheckActive]: done,
+      })}
       >
         {done && <Checkmark />}
       </span>

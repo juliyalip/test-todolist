@@ -1,6 +1,6 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import { onFilter } from '../../redux/filter-slice';
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
+import { onFilter } from 'redux/filter-slice';
 import style from './index.module.scss';
 
 const Filter = () => {

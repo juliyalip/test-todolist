@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch } from 'redux/hooks';
 import shortid from 'shortid';
-import { addTodo } from '../../redux/todos-slice';
+import { addTodo } from 'redux/todos-slice';
 import style from './index.module.scss';
 
 const TodoForm = () => {

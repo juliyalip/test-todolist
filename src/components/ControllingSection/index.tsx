@@ -1,6 +1,6 @@
-import MenuControlling from '../MenuControling';
-import { useAppDispatch } from '../../redux/hooks';
-import { removeAllComplited } from '../../redux/todos-slice';
+import MenuControlling from 'components/MenuControling';
+import { useAppDispatch } from 'redux/hooks';
+import { removeAllComplited } from 'redux/todos-slice';
 import style from './index.module.scss';
 
 const ControllingSection = () => {

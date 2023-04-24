@@ -1,6 +1,7 @@
 import Checkbox from '../Checkbox';
 import Cross from '../Cross';
-import { ITodo } from '../../../types';
+import { ITodo } from 'types';
+import classnames from 'classnames';
 import style from './index.module.scss';
 
 interface ItemInterface {
@@ -16,10 +17,9 @@ const Item = ({ item, onComplited, onDelete }: ItemInterface) => {
 
       <div className={style.itemText} onClick={() => onDelete(item.id)}>
         <p
-          style={{
-            color: item.done ? 'grey' : 'black',
-            textDecoration: item.done ? 'line-through' : '',
-          }}
+          className={classnames({
+            [style.itemTextActive]: item.done,
+          })}
         >
           {item.text}
         </p>
