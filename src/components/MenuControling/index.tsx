@@ -32,7 +32,7 @@ const MenuControlling = ({ items }: IProp) => {
     if (activeIndex === 2) {
       setResult(getAllComplited);
     }
-  }, [activeIndex, todos]);
+  }, [activeIndex, todos, getAllActive, getAllComplited]);
 
   const onClickMenu = (index: number) => {
     setActiveIndex(index);

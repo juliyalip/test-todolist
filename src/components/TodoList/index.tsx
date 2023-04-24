@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
-import { getVisibleTodos, getTodos } from '../../redux/selectors';
-import { removeTodo, complitedTodo } from '../../redux/todos-slice';
-import Item from '../itoms/Item';
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
+import { getVisibleTodos, getTodos } from 'redux/selectors';
+import { removeTodo, complitedTodo } from 'redux/todos-slice';
+import Item from 'components/itoms/Item';
 import style from './index.module.scss';
 
 const TodoList = () => {

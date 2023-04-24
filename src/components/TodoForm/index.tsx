@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch } from 'redux/hooks';
 import shortid from 'shortid';
-import { addTodo } from '../../redux/todos-slice';
-import Alert from '../../components/itoms/Alert';
+import { addTodo } from 'redux/todos-slice';
+import Alert from 'components/itoms/Alert';
 import style from './index.module.scss';
 
 const TodoForm = () => {
