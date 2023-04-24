@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../redux/hooks';
+import { useAppSelector } from 'redux/hooks';
 import style from './index.module.scss';
 
 interface IProp {
