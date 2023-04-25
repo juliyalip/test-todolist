@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAppSelector } from 'redux/hooks';
+import classnames from 'classnames';
 import style from './index.module.scss';
 
 interface IProp {
@@ -32,7 +33,7 @@ const MenuControlling = ({ items }: IProp) => {
     if (activeIndex === 2) {
       setResult(getAllComplited);
     }
-  }, [activeIndex, todos]);
+  }, [activeIndex, todos, getAllActive, getAllComplited]);
 
   const onClickMenu = (index: number) => {
     setActiveIndex(index);
@@ -46,8 +47,9 @@ const MenuControlling = ({ items }: IProp) => {
           <li
             key={item}
             onClick={() => onClickMenu(index)}
-            className={style.controlItem}
-            style={{ color: index === activeIndex ? 'blue' : 'black' }}
+            className={classnames(style.controlItem, {
+              [style.controlItemActive]: index === activeIndex,
+            })}
           >
             {item}{' '}
           </li>

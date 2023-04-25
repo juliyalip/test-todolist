@@ -1,15 +1,11 @@
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
+import { renderWithProviders } from 'utils/test-utils';
 import TodoForm from './index';
-import { Provider } from 'react-redux';
-import store from '../../redux/store';
+
 
 describe('test todoForm', () => {
   beforeEach(() => {
-    render(
-      <Provider store={store}>
-        <TodoForm />
-      </Provider>,
-    );
+  renderWithProviders(<TodoForm />)
   });
 
   it('test form element render', () => {
@@ -32,3 +28,8 @@ describe('test todoForm', () => {
     jest.clearAllMocks();
   });
 });
+
+
+//   <Provider store={store}>
+//     <TodoForm />
+//     </Provider>
