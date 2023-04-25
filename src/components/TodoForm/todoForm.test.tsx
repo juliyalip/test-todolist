@@ -2,7 +2,6 @@ import { fireEvent } from '@testing-library/react';
 import { renderWithProviders } from 'utils/test-utils';
 import TodoForm from './index';
 
-
 describe('test todoForm', () => {
   beforeEach(() => {
   renderWithProviders(<TodoForm />)
@@ -29,7 +28,3 @@ describe('test todoForm', () => {
   });
 });
 
-
-//   <Provider store={store}>
-//     <TodoForm />
-//     </Provider>
