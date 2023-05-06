@@ -9,6 +9,7 @@ describe('test todoList', () => {
         todos: initialTodos,
       },
     });
-    expect(getByText(/I like Redux/i)).toBeInTheDocument()
+
+    expect(getByText(/I like Redux/i)).toBeInTheDocument();
   });
 });

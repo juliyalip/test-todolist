@@ -41,7 +41,7 @@ const MenuControlling = ({ items }: IProp) => {
 
   return (
     <div className={style.container}>
-      <span>{result} items</span>
+      <span data-testId="result">{result} items</span>
       <ul className={style.controlList}>
         {items.map((item, index) => (
           <li

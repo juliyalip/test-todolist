@@ -1,5 +1,5 @@
 import Checkmark from '../Checkmark';
-import classnames from 'classnames'
+import classnames from 'classnames';
 import style from './index.module.scss';
 
 interface IProps {
@@ -18,9 +18,9 @@ const Checkbox = ({ done, onComplited, id }: IProps) => {
         className={style.checkbox}
       />
       <span
-      className={classnames(style.spanCheck, {
-        [style.spanCheckActive]: done,
-      })}
+        className={classnames(style.spanCheck, {
+          [style.spanCheckActive]: done,
+        })}
       >
         {done && <Checkmark />}
       </span>

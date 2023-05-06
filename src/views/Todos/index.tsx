@@ -10,14 +10,14 @@ import style from './index.module.scss';
 
 export default function Todos() {
   const todos = useAppSelector(getTodos);
-  const isData = Boolean(todos.length === 0);
+  const isNotData = Boolean(todos.length === 0);
   return (
     <>
       <Hero />
 
       <TodoForm />
       <ContainerForPosition>
-        {isData && <p className={style.textNotFound}>Data not found</p>}
+        {isNotData && <p className={style.textNotFound} >Data not found</p>}
         {todos.length > 0 && <Filter />}
         {todos && <TodoList />}
         {todos.length > 0 && <ControllingSection />}

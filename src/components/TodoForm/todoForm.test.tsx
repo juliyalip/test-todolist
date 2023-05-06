@@ -4,7 +4,7 @@ import TodoForm from './index';
 
 describe('test todoForm', () => {
   beforeEach(() => {
-  renderWithProviders(<TodoForm />)
+    renderWithProviders(<TodoForm />);
   });
 
   it('test form element render', () => {
@@ -12,10 +12,12 @@ describe('test todoForm', () => {
     expect(form).toBeInTheDocument();
   });
 
-  it('render input element', () => {
+  it('render and update input element', () => {
     const input = document.querySelector('input');
-    expect(input).toBeInTheDocument();
+    expect(input?.value).toBe('');
     expect(input).toBeValid();
+    if (input) fireEvent.input(input, { target: { value: 'hello' } });
+    expect(input?.value).toBe('hello');
   });
 
   it('render button element', () => {
@@ -27,4 +29,3 @@ describe('test todoForm', () => {
     jest.clearAllMocks();
   });
 });
-

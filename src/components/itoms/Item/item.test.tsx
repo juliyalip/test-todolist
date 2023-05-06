@@ -3,9 +3,10 @@ import { ITodo } from 'types';
 import Item from './index';
 
 describe('test Item component', () => {
+  const handleComplited = jest.fn();
+  const handleDelete = jest.fn();
+
   it('prerender correctly', () => {
-    const handleComplited = jest.fn();
-    const handleDelete = jest.fn();
     const item: ITodo = { id: '001', text: 'I like Redux', done: false };
     render(
       <Item

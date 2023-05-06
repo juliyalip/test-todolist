@@ -12,10 +12,10 @@ interface ItemInterface {
 
 const Item = ({ item, onComplited, onDelete }: ItemInterface) => {
   return (
-    <li className={style.itemContainer}>
+    <li className={style.itemContainer} >
       <Checkbox done={item.done} onComplited={onComplited} id={item.id} />
 
-      <div className={style.itemText} onClick={() => onDelete(item.id)}>
+      <div className={style.itemText} data-testid="delete-todo" onClick={() => onDelete(item.id)}>
         <p
           className={classnames({
             [style.itemTextActive]: item.done,
