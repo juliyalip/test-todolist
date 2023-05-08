@@ -21,6 +21,11 @@ describe('test selectors', () => {
       { id: '002', text: 'Redux', done: true },
     ]);
   });
+  
+  it('test filter' , () =>{
+    const result = getFilter(initionState);
+    expect(result).toBe('react')
+  })
 
 it("filtered todos", () =>{
   const result = getVisibleTodos(initionState)
@@ -31,3 +36,5 @@ it("filtered todos", () =>{
     jest.clearAllMocks();
   });
 });
+
+
