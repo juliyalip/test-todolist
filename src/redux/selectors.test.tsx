@@ -10,7 +10,7 @@ describe('test selectors', () => {
           { id: '001', text: 'React', done: false },
           { id: '002', text: 'Redux', done: true },
         ],
-        filter: '',
+        filter: 'React',
       }),
   );
 
@@ -22,10 +22,10 @@ describe('test selectors', () => {
     ]);
   });
 
-  it('get filter selector', () => {
-    const result = getFilter(initionState);
-    expect(result).toEqual(initionState.filter);
-  });
+it("filtered todos", () =>{
+  const result = getVisibleTodos(initionState)
+  expect(result).toEqual([{ id: '001', text: 'React', done: false },])
+})
 
   afterEach(() => {
     jest.clearAllMocks();

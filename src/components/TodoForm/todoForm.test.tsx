@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react';
+import { fireEvent} from '@testing-library/react';
 import { renderWithProviders } from 'utils/test-utils';
 import TodoForm from './index';
 
@@ -14,10 +14,13 @@ describe('test todoForm', () => {
 
   it('render and update input element', () => {
     const input = document.querySelector('input');
-    expect(input?.value).toBe('');
+     expect(input?.value).toBe('');
     expect(input).toBeValid();
-    if (input) fireEvent.input(input, { target: { value: 'hello' } });
-    expect(input?.value).toBe('hello');
+    if (input ){ 
+      fireEvent.input(input, { target: { value: 'hello' } });
+    expect(input?.value).toBe('hello')
+    
+  }
   });
 
   it('render button element', () => {
