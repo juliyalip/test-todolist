@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { renderWithProviders } from 'utils/test-utils';
 import MenuControlling from './index';
 
@@ -8,9 +8,14 @@ describe('test MenuControling component', () => {
     const { getByText } = renderWithProviders(
       <MenuControlling items={initialItems} />,
     );
+    const btnComplited = screen.getByText(/complited/i);
+    const btnActive = screen.getByText(/active/i);
+    const btnAll = screen.getByText(/all/i);
+    const result = screen.getByTestId('result');
     expect(getByText(/complited/i)).toBeInTheDocument();
-    fireEvent.click(getByText('all'));
-    fireEvent.click(getByText('active'));
-    fireEvent.click(getByText('complited'));
+    expect(btnComplited).toBeInTheDocument();
+    expect(btnActive).toBeInTheDocument();
+    expect(btnAll).toBeInTheDocument();
+    expect(result).toBeInTheDocument();
   });
 });

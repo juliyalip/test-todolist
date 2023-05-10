@@ -1,4 +1,4 @@
-import { fireEvent} from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { renderWithProviders } from 'utils/test-utils';
 import TodoForm from './index';
 
@@ -14,18 +14,22 @@ describe('test todoForm', () => {
 
   it('render and update input element', () => {
     const input = document.querySelector('input');
-     expect(input?.value).toBe('');
+    expect(input?.value).toBe('');
     expect(input).toBeValid();
-    if (input ){ 
+    if (input) {
       fireEvent.input(input, { target: { value: 'hello' } });
-    expect(input?.value).toBe('hello')
-    
-  }
+      expect(input?.value).toBe('hello');
+    }
   });
 
-  it('render button element', () => {
-    const buttonElement = document.querySelector('button');
-    if (buttonElement) fireEvent.click(buttonElement);
+  it('conditional render for button element', () => {
+    const input = document.querySelector('input');
+    if (input) {
+      fireEvent.input(input, { target: { value: 'hello' } });
+      const buttonElement = document.querySelector('button');
+      expect(buttonElement).toBeInTheDocument();
+      expect(buttonElement).toMatchSnapshot();
+    }
   });
 
   afterEach(() => {

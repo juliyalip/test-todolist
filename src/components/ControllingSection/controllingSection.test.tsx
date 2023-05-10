@@ -42,6 +42,7 @@ describe('test Controling section', () => {
     expect(screen.queryByText(/Data not found/i)).toBeNull();
     fireEvent.click(btnAllComplited);
     expect(screen.getByText(/Data not found/i)).toBeInTheDocument();
+    expect(screen.getByText(/Data not found/i)).toMatchSnapshot();
   });
 
   afterEach(() => {

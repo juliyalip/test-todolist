@@ -8,5 +8,6 @@ describe('Alert component', () => {
       'The file is empty. Please, enter something.',
     );
     expect(textElement).toBeInTheDocument();
+    expect(textElement).toMatchSnapshot()
   });
 });

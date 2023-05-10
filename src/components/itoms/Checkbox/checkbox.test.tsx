@@ -17,6 +17,7 @@ describe('test checkbox', () => {
       background:
         'linear-gradient(to right, rgba(248, 13, 221, 1), rgba(40, 73, 237, 1)',
     });
+    expect(span).toMatchSnapshot()
   });
 
   afterEach(() => {

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ITodo } from 'types';
 import Item from './index';
 
@@ -8,17 +8,18 @@ describe('test Item component', () => {
 
   it('prerender correctly', () => {
     const item: ITodo = { id: '001', text: 'I like Redux', done: false };
-    render(
+    const { getByTestId } = render(
       <Item
         item={item}
         onComplited={handleComplited}
         onDelete={handleDelete}
       />,
     );
-    const li = document.querySelector('li');
-    const p = document.querySelector('p');
+    const li = screen.getByTestId('item');
+    const text = screen.getByTestId('style');
     expect(li).toBeInTheDocument();
-    expect(p).toHaveTextContent('I like Redux');
+    expect(text).toHaveTextContent('I like Redux');
+    expect(text).toMatchSnapshot();
   });
   afterEach(() => {
     jest.clearAllMocks();

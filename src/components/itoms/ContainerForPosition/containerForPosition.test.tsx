@@ -1,16 +1,12 @@
 import ContainerForPosition from './index';
-import { Provider } from 'react-redux';
-import store from '../../../redux/store';
-import { render } from '@testing-library/react';
+import { renderWithProviders } from 'utils/test-utils';
 
 describe('test render component', () => {
   beforeEach(() => {
-    render(
-      <Provider store={store}>
-        <ContainerForPosition>
-          <p>test</p>
-        </ContainerForPosition>
-      </Provider>,
+    renderWithProviders(
+      <ContainerForPosition>
+        <p>test</p>
+      </ContainerForPosition>,
     );
   });
 
