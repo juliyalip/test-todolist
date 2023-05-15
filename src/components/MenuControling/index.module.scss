@@ -5,14 +5,12 @@
 
 .controlItem {
   cursor: pointer;
-}
-
-.controlItem:hover {
-  font-weight: 500;
-}
-
-.controlItem:not(:last-child) {
-  margin-right: 10px;
+  &:hover {
+    font-weight: 500;
+  }
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .container {
@@ -21,6 +19,6 @@
   align-items: center;
 }
 
-.controlItemActive{
-  color: blue
+.controlItemActive {
+  color: blue;
 }

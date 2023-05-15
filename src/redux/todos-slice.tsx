@@ -24,7 +24,7 @@ const todosSlice = createSlice({
       });
     },
     removeAllComplited: state => {
-      return state.filter(todo => todo.done === false);
+      return state.filter(todo => !todo.done );
     },
   },
 });

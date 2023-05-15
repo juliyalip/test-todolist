@@ -14,8 +14,7 @@
 .clear {
   cursor: pointer;
   margin-left: auto;
-}
-
-.clear:hover {
-  font-weight: 500;
+  &:hover {
+    font-weight: 500;
+  }
 }
