@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Item component prerender correctly 1`] = `
+<p
+  class=""
+  data-testid="style"
+>
+  I like Redux
+</p>
+`;

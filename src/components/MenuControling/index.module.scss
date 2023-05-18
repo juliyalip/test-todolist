@@ -5,18 +5,20 @@
 
 .controlItem {
   cursor: pointer;
-}
-
-.controlItem:hover {
-  font-weight: 500;
-}
-
-.controlItem:not(:last-child) {
-  margin-right: 10px;
+  &:hover {
+    font-weight: 500;
+  }
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .container {
   display: flex;
   margin-right: 20px;
   align-items: center;
+}
+
+.controlItemActive {
+  color: blue;
 }

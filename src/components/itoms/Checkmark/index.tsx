@@ -1,4 +1,4 @@
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const Checkmark = () => {
   return (
@@ -7,11 +7,12 @@ const Checkmark = () => {
       xmlns="http://www.w3.org/2000/svg"
       width="12"
       height="12"
-      viewBox="0 0 32 32" className={styles.icon}
+      viewBox="0 0 32 32"
+      className={styles.icon}
     >
       <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
     </svg>
   );
 };
 
-export default Checkmark
+export default Checkmark;

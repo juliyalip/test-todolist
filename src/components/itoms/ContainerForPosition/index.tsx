@@ -6,6 +6,7 @@ interface IProp {
 }
 
 const ContainerForPosition = ({ children }: IProp) => {
+  
   return <div className={styles.container}>{children}</div>;
 };
 export default ContainerForPosition;

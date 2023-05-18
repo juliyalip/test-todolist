@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch } from 'redux/hooks';
 import shortid from 'shortid';
-import { addTodo } from '../../redux/todos-slice';
+import { addTodo } from 'redux/todos-slice';
 import styles from './index.module.scss';
 
 const TodoForm = () => {
@@ -26,12 +26,13 @@ const TodoForm = () => {
     <form onSubmit={handleSubmit} className={styles.container}>
       {text && <span className={styles.labelForActiveForm}></span>}
 
-      <input
+      <input data-testid="input"
         type="text"
         value={text}
         onChange={changeText}
-        className={styles.elForm}
+        className={styles.inputElement}
       />
+      {text && <button type="submit" className={styles.btnOnForm} data-testid="button"></button>}
     </form>
   );
 };
