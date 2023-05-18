@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Controling section test get result after delete all complited todos 1`] = `
+exports[`test controling section get result after delete all complited todos 1`] = `
 <p
   class="textNotFound"
 >

@@ -5,6 +5,7 @@ it("prerender correctly", () =>{
      render(<Cross />)
   const iconElement = document.querySelector('svg')
   const pathElement = document.querySelector('path')
+  
   expect(iconElement ).toBeInTheDocument()
   expect( pathElement).toBeInTheDocument()
 })

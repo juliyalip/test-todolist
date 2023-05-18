@@ -2,7 +2,7 @@ import Checkbox from '../Checkbox';
 import Cross from '../Cross';
 import { ITodo } from 'types';
 import classnames from 'classnames';
-import style from './index.module.scss';
+import styles from './index.module.scss';
 
 interface ItemInterface {
   item: ITodo;
@@ -12,13 +12,13 @@ interface ItemInterface {
 
 const Item = ({ item, onComplited, onDelete }: ItemInterface) => {
   return (
-    <li className={style.itemContainer} data-testid="item" >
+    <li className={styles.itemContainer} data-testid="item" >
       <Checkbox done={item.done} onComplited={onComplited} id={item.id} />
 
-      <div className={style.itemText} data-testid="delete-todo" onClick={() => onDelete(item.id)}>
+      <div className={styles.itemText} data-testid="delete-todo" onClick={() => onDelete(item.id)}>
         <p data-testid="style"
           className={classnames({
-            [style.itemTextActive]: item.done,
+            [styles.itemTextActive]: item.done,
           })}
         >
           {item.text}

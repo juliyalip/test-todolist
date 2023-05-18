@@ -6,7 +6,7 @@ import Hero from 'components/Hero';
 import ContainerForPosition from 'components/itoms/ContainerForPosition';
 import ControllingSection from 'components/ControllingSection';
 import Filter from 'components/Filter';
-import style from './index.module.scss';
+import styles from './index.module.scss';
 
 export default function Todos() {
   const todos = useAppSelector(getTodos);
@@ -17,7 +17,7 @@ export default function Todos() {
 
       <TodoForm />
       <ContainerForPosition>
-        {isNotData && <p className={style.textNotFound} >Data not found</p>}
+        {isNotData && <p className={styles.textNotFound} >Data not found</p>}
         {todos.length > 0 && <Filter />}
         {todos && <TodoList />}
         {todos.length > 0 && <ControllingSection />}

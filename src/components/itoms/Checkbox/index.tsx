@@ -1,6 +1,6 @@
 import Checkmark from '../Checkmark';
 import classnames from 'classnames';
-import style from './index.module.scss';
+import styles from './index.module.scss';
 
 interface IProps {
   done: boolean;
@@ -10,16 +10,16 @@ interface IProps {
 
 const Checkbox = ({ done, onComplited, id }: IProps) => {
   return (
-    <label className={style.label}>
+    <label className={styles.label}>
       <input
         type="checkbox"
         checked={done}
         onChange={() => onComplited(id)}
-        className={style.checkbox}
+        className={styles.checkbox}
       />
       <span
-        className={classnames(style.spanCheck, {
-          [style.spanCheckActive]: done,
+        className={classnames(styles.spanCheck, {
+          [styles.spanCheckActive]: done,
         })}
       >
         {done && <Checkmark />}

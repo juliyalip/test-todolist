@@ -8,7 +8,7 @@ describe('test Item component', () => {
 
   it('prerender correctly', () => {
     const item: ITodo = { id: '001', text: 'I like Redux', done: false };
-    const { getByTestId } = render(
+    render(
       <Item
         item={item}
         onComplited={handleComplited}
@@ -17,6 +17,7 @@ describe('test Item component', () => {
     );
     const li = screen.getByTestId('item');
     const text = screen.getByTestId('style');
+
     expect(li).toBeInTheDocument();
     expect(text).toHaveTextContent('I like Redux');
     expect(text).toMatchSnapshot();

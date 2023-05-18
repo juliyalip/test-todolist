@@ -1,8 +1,8 @@
-import style from './index.module.scss';
+import styles from './index.module.scss';
 
 const Alert = () => {
   return (
-    <div className={style.container}>
+    <div className={styles.container}>
       The file is empty. Please, enter something.
     </div>
   );

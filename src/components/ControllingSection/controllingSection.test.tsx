@@ -1,51 +1,65 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent} from '@testing-library/react';
 import Todos from 'views/Todos';
 import { renderWithProviders } from 'utils/test-utils';
 
-describe('test Controling section', () => {
-  beforeEach(() => {
-    const initionTodos = [
-      { id: '001', text: 'I like React', done: true },
-      { id: '002', text: 'I like Redux', done: true },
-    ];
-    const { getByText } = renderWithProviders(<Todos />, {
-      preloadedState: {
-        todos: initionTodos,
-      },
-    });
+const initionTodos = [
+  { id: '001', text: 'I like React', done: true },
+  { id: '002', text: 'I like Redux', done: true },
+];
+
+const renderComponent = () =>
+  renderWithProviders(<Todos />, {
+    preloadedState: {
+      todos: initionTodos,
+    },
   });
 
-  it('Prerender corectly', () => {
-    expect(screen.getByText(/I like React/)).toBeInTheDocument();
-    expect(screen.getByText(/I like Redux/)).toBeInTheDocument();
-    expect(screen.getByText(/Clear complited/)).toBeInTheDocument();
-    expect(screen.getByText(/Active/i)).toBeInTheDocument();
-    expect(screen.getByText(/All/i)).toBeInTheDocument();
-    expect(screen.getByText(/Completed/i)).toBeInTheDocument();
+describe('test controling section', () => {
+  it('Pre render correctly', () => {
+    const { getByText } = renderComponent();
+    
+    expect(getByText(/I like React/)).toBeInTheDocument();
+    expect(getByText(/I like Redux/)).toBeInTheDocument();
+    expect(getByText(/Clear complited/)).toBeInTheDocument();
+    expect(getByText(/Active/i)).toBeInTheDocument();
+    expect(getByText(/All/i)).toBeInTheDocument();
+    expect(getByText(/Completed/i)).toBeInTheDocument();
+
+    fireEvent.click(getByText('Completed'));
   });
 
-  it('test get results after click on buttons', () => {
-    const btnComplited = screen.getByText(/Completed/i);
-    const btnActive = screen.getByText(/Active/i);
-    const btnAll = screen.getByText(/All/i);
-    const result = screen.getByTestId('result');
-    fireEvent.click(btnComplited);
+  it("click button 'completed'", () => {
+    const { getByText, getByTestId } = renderComponent();
+    const result = getByTestId('result');
+    fireEvent.click(getByText('Completed'));
+
     expect(result.textContent).toBe('2 items');
-    fireEvent.click(btnActive);
+  });
+
+  it("click on button 'active'", () => {
+    const { getByText, getByTestId } = renderComponent();
+    const result = getByTestId('result');
+    fireEvent.click(getByText(/Active/i));
+
     expect(result.textContent).toBe('0 items');
-    fireEvent.click(btnAll);
+  });
+
+  it("click on button 'all'", () => {
+    const { getByText, getByTestId } = renderComponent();
+    const result = getByTestId('result');
+    fireEvent.click(getByText(/All/i));
+
     expect(result.textContent).toBe('2 items');
   });
 
-  it('test get result after delete all complited todos', () => {
-    const btnAllComplited = screen.getByText(/Clear complited/i);
-    expect(screen.queryByText(/Data not found/i)).toBeNull();
-    fireEvent.click(btnAllComplited);
-    expect(screen.getByText(/Data not found/i)).toBeInTheDocument();
-    expect(screen.getByText(/Data not found/i)).toMatchSnapshot();
-  });
+  it('get result after delete all complited todos', () => {
+    const { getByText, queryByText } = renderComponent();
 
-  afterEach(() => {
-    jest.clearAllMocks();
+    expect(queryByText(/Data not found/i)).toBeNull();
+    
+    fireEvent.click(getByText(/Clear complited/i));
+
+    expect(getByText(/Data not found/i)).toBeInTheDocument();
+    expect(getByText(/Data not found/i)).toMatchSnapshot();
   });
 });
