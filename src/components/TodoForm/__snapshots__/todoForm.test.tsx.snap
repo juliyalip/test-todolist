@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test todoForm conditional for render  button element 1`] = `
+<button
+  class="btnOnForm"
+  data-testid="button"
+  type="submit"
+/>
+`;
+
 exports[`test todoForm conditional render for button element 1`] = `
 <button
   class="btnOnForm"

@@ -25,8 +25,7 @@ describe('test controling section', () => {
     expect(getByText(/All/i)).toBeInTheDocument();
     expect(getByText(/Completed/i)).toBeInTheDocument();
 
-    fireEvent.click(getByText('Completed'));
-  });
+   });
 
   it("click button 'completed'", () => {
     const { getByText, getByTestId } = renderComponent();

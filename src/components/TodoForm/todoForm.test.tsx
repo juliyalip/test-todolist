@@ -2,22 +2,19 @@ import { fireEvent } from '@testing-library/react';
 import { renderWithProviders } from 'utils/test-utils';
 import TodoForm from './index';
 
+const renderComponent = () => renderWithProviders(<TodoForm />);
+
 describe('test todoForm', () => {
-  beforeEach(() => {
-    renderWithProviders(<TodoForm />);
-  });
-
   it('test form element render', () => {
-    const form = document.querySelector('form');
+    const { getByTestId } = renderComponent();
+    const input = getByTestId('input');
 
-    expect(form).toBeInTheDocument();
+    expect(input.textContent).toBe('');
+    expect(input).toBeValid();
   });
 
-  it('render and update input element', () => {
+  it('update input element', () => {
     const input = document.querySelector('input');
-
-    expect(input?.value).toBe('');
-    expect(input).toBeValid();
     if (input) {
       fireEvent.input(input, { target: { value: 'hello' } });
 
@@ -25,18 +22,15 @@ describe('test todoForm', () => {
     }
   });
 
-  it('conditional render for button element', () => {
-    const input = document.querySelector('input');
+  it('conditional for render  button element', () => {
+    const { getByTestId } = renderComponent();
+    const input = getByTestId('input');
     if (input) {
       fireEvent.input(input, { target: { value: 'hello' } });
-      const buttonElement = document.querySelector('button');
-      
-      expect(buttonElement).toBeInTheDocument();
-      expect(buttonElement).toMatchSnapshot();
     }
-  });
+    const buttonElement = getByTestId('button');
 
-  afterEach(() => {
-    jest.clearAllMocks();
+    expect(buttonElement).toBeInTheDocument();
+    expect(buttonElement).toMatchSnapshot();
   });
 });

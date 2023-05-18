@@ -12,6 +12,7 @@ describe('test render component', () => {
 
   it('renders corectly inition document', () => {
     const paragraf = document.querySelector('p');
+    
     expect(paragraf?.textContent).toBe('test');
   });
 

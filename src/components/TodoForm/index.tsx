@@ -26,13 +26,13 @@ const TodoForm = () => {
     <form onSubmit={handleSubmit} className={styles.container}>
       {text && <span className={styles.labelForActiveForm}></span>}
 
-      <input
+      <input data-testid="input"
         type="text"
         value={text}
         onChange={changeText}
         className={styles.inputElement}
       />
-      {text && <button type="submit" className={styles.btnOnForm}></button>}
+      {text && <button type="submit" className={styles.btnOnForm} data-testid="button"></button>}
     </form>
   );
 };
