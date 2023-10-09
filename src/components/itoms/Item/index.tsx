@@ -24,7 +24,7 @@ const Item = ({ item, onComplited, onDelete }: ItemInterface) => {
           {item.text}
         </p>
 
-        {!item.done && <Cross />}
+        {!item.done &&<Cross />}
       </div>
     </li>
   );
