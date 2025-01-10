@@ -23,16 +23,16 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.container}>
-      {text && <span className={styles.labelForActiveForm}></span>}
-
+    <form onSubmit={handleSubmit} >
+      <div className={`${styles.formContainer}  ${text ? styles.activeFormContainer : ''}`}>
+     <span className={styles.labelForActiveForm} style={{opacity:  text? 1: 0}}></span>
       <input data-testid="input"
         type="text"
         value={text}
         onChange={changeText}
         className={styles.inputElement}
       />
-      {text && <button type="submit" className={styles.btnOnForm} data-testid="button"></button>}
+      </div>
     </form>
   );
 };

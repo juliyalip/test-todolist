@@ -4,7 +4,7 @@ import Item from './index';
 
 describe('test Item component', () => {
   const handleComplited = jest.fn();
-  const handleDelete = jest.fn();
+
 
   it('prerender correctly', () => {
     const item: ITodo = { id: '001', text: 'I like Redux', done: false };
@@ -12,7 +12,7 @@ describe('test Item component', () => {
       <Item
         item={item}
         onComplited={handleComplited}
-        onDelete={handleDelete}
+       
       />,
     );
     const li = screen.getByTestId('item');

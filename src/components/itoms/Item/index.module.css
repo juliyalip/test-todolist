@@ -7,14 +7,14 @@
   box-shadow: var(--medium-shadow);
   padding: 10px 12px;
   font-size: 0.9rem;
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .itemContainer {
     font-size: 1rem;
   }
-  
 }
 
-.itemComplited{
+.itemComplited {
   text-decoration: line-through;
-  color: var( --complited-text-color);
-}
+  color: var(--complited-text-color);
+}/*# sourceMappingURL=index.module.css.map */

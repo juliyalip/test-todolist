@@ -1,0 +1,22 @@
+.inputEl {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 10px;
+}
+.inputEl:focus {
+  border-color: var(--input-focus-color);
+}
+@media screen and (min-width: 768px) {
+  .inputEl {
+    padding: 15px 12px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .inputEl {
+    padding: 15px 10px;
+  }
+}/*# sourceMappingURL=index.module.css.map */

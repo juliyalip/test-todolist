@@ -11,15 +11,15 @@ const Filter = () => {
   };
 
   return (
-    <div className={styles.containerFilter}>
-      <input
-        type="text"
-        value={filter}
-        onChange={handleChange}
-        placeholder="search"
-        className={styles.inputEl}
-      />
-    </div>
+
+    <input
+      type="text"
+      value={filter}
+      onChange={handleChange}
+      placeholder="search"
+      className={styles.inputEl}
+    />
+
   );
 };
 

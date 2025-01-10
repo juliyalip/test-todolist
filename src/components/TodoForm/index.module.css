@@ -1,4 +1,4 @@
-.formContainer{
+.formContainer {
   background-color: var(--primary-background-color);
   border: 1px solid var(--input-border-color);
   border-radius: 4px;
@@ -7,20 +7,21 @@
   margin-bottom: 10px;
   box-shadow: var(--heavy-shadow);
   transition: border-color 250ms ease;
-
-
+}
 @media screen and (min-width: 768px) {
-  margin-bottom: 15px;
+  .formContainer {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .formContainer {
+    margin-bottom: 20px;
+  }
 }
 
-  @media screen and (min-width: 1200px){
-    margin-bottom: 20px;
-     }
-   }
-
-.activeFormContainer{
-  border-color:  var(--input-focus-color);
-}   
+.activeFormContainer {
+  border-color: var(--input-focus-color);
+}
 
 .inputElement {
   width: 80%;
@@ -29,16 +30,18 @@
   vertical-align: middle;
   outline: 0;
   border: 0;
-
-  @media screen and (min-width: 768px){
+}
+@media screen and (min-width: 768px) {
+  .inputElement {
     padding: 15px 15px;
-   }
-   @media screen and (min-width: 1200px){
+  }
+}
+@media screen and (min-width: 1200px) {
+  .inputElement {
     padding-top: 17px;
     padding-bottom: 17px;
-   }
+  }
 }
-
 
 .labelForActiveForm {
   display: inline-block;
@@ -51,10 +54,11 @@
   margin-right: 7px;
   opacity: 0;
   transition: opacity 250ms ease;
-  @media screen and (min-width: 1200px){
+}
+@media screen and (min-width: 1200px) {
+  .labelForActiveForm {
     width: 20px;
     height: 20px;
     margin-right: 5px;
   }
-}
-
+}/*# sourceMappingURL=index.module.css.map */
