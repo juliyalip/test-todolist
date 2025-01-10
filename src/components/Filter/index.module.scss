@@ -4,6 +4,7 @@
    border: 1px solid var(--input-border-color);
    border-radius: 4px;
    outline: none;
+   box-shadow: var(--medium-shadow);
 
    margin-bottom: 10px;
    &:focus{

@@ -26,7 +26,7 @@ const TodoForm = () => {
     <form onSubmit={handleSubmit} >
       <div className={`${styles.formContainer}  ${text ? styles.activeFormContainer : ''}`}>
      <span className={styles.labelForActiveForm} style={{opacity:  text? 1: 0}}></span>
-      <input data-testid="input"
+      <input data-testid="input" placeholder='add your task'
         type="text"
         value={text}
         onChange={changeText}
